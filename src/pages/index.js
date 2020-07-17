@@ -8,6 +8,7 @@ export default function Home() {
     <div>
       <Layout>
         <h1>This will be the body.</h1>
+        <p>This is some text.</p>
       </Layout>
     </div>
   )
