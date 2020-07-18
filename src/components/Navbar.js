@@ -58,20 +58,6 @@ const StyledNavbar = styled.nav`
   li {
     margin: 0 15px;
   }
-
-  a {
-    text-decoration: none;
-    color: black;
-    transition: color 0.3s ease;
-  }
-
-  a:hover {
-    color: #1cbbd3;
-  }
-
-  .active {
-    color: #1cbbd3;
-  }
 `
 
 export default Navbar
