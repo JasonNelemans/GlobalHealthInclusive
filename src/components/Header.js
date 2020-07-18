@@ -1,14 +1,19 @@
 import React from "react"
+import styled from "styled-components"
 
 // Components
 import Navbar from "./Navbar"
 
 const Header = () => {
   return (
-    <header>
+    <StyledHeader>
       <Navbar />
-    </header>
+    </StyledHeader>
   )
 }
+
+const StyledHeader = styled.div`
+  border-bottom: 1px solid;
+`
 
 export default Header
