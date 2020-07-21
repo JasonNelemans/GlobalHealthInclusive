@@ -54,7 +54,28 @@ export default function Home() {
   console.log("data: ", data)
   return (
     <div>
-      <Layout></Layout>
+      <Layout>
+        <TopBanner>
+          <img
+            className="cover-banner"
+            src={
+              data.allContentfulHomepage.edges[0].node.topBanner.cover.file.url
+            }
+            alt={data.allContentfulHomepage.edges[0].node.topBanner.cover.title}
+          />
+          {/* <img
+            src={
+              data.allContentfulHomepage.edges[0].node.topBanner.logo.file.url
+            }
+            alt={data.allContentfulHomepage.edges[0].node.topBanner.logo.title}
+          /> */}
+        </TopBanner>
+      </Layout>
     </div>
   )
 }
+
+const TopBanner = styled.div`
+  display: flex;
+  justify-content: center;
+`
