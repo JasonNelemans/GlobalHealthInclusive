@@ -6,6 +6,11 @@ import styled from "styled-components"
 // Components
 import Layout from "../components/Layout"
 
+/* 
+Volgende stap: 
+Hoe bold duidelijker maken?
+*/
+
 export default function Home() {
   const data = useStaticQuery(graphql`
     query {
@@ -70,20 +75,27 @@ export default function Home() {
             alt={data.allContentfulHomepage.edges[0].node.topBanner.logo.title}
           /> */}
         </TopBanner>
-        <div>
-          {data.allContentfulHomepage.edges[0].node.homepageBoxes.map(box => {
-            return (
-              <Box key={box.title}>
-                <div className="box-text">
-                  <h2>{box.title}</h2>
-                  <h3>{box.subTitle}</h3>
-                  {documentToReactComponents(box.content.json)}
-                </div>
-                <img src={box.image.file.url} alt={box.image.title} />
-              </Box>
-            )
-          })}
-        </div>
+        <BoxContainer>
+          {data.allContentfulHomepage.edges[0].node.homepageBoxes.map(
+            (box, i) => {
+              return (
+                <Box key={box.title} uneven={i % 2}>
+                  <div className="box-text">
+                    <h2>{box.title}</h2>
+                    <h3>{box.subTitle}</h3>
+                    <div className="divider" />
+                    <p>{documentToReactComponents(box.content.json)}</p>
+                  </div>
+                  <img
+                    src={box.image.file.url}
+                    alt={box.image.title}
+                    width="376px"
+                  />
+                </Box>
+              )
+            }
+          )}
+        </BoxContainer>
         <BottomBanner>
           <div className="bb-container">
             <div>
@@ -105,12 +117,57 @@ const TopBanner = styled.div`
   display: flex;
   justify-content: center;
 `
+const BoxContainer = styled.div`
+  background-color: #eeeeee;
+  padding-top: 50px;
+  padding-bottom: 100px;
+`
+
 const Box = styled.div`
   display: flex;
   max-width: 940px;
-  margin: 15px auto;
+  margin: 15px auto 0px;
   background-color: #ffffff;
-  border: 2px solid black;
+  justify-content: space-between;
+  text-align: center;
+  flex-direction: ${props => (props.uneven === 1 ? "row-reverse" : "row")};
+
+  img {
+    margin: 0;
+    object-fit: contain;
+  }
+
+  h2 {
+    font-size: 30px;
+    margin: 15px auto 0px;
+  }
+
+  h2,
+  h3 {
+    color: #31419d;
+  }
+
+  h3 {
+    margin: 10px auto 0px;
+  }
+
+  .divider {
+    margin: 10px auto 0px;
+    border-bottom: 1px solid #eeeeee;
+    max-width: 80px;
+  }
+
+  p {
+    font-size: 15px;
+    text-align: left;
+    line-height: 1.5;
+    color: #a1a5a9;
+  }
+
+  .box-text {
+    width: 564px;
+    padding: 0 40px 10px;
+  }
 `
 
 const BottomBanner = styled.div`
