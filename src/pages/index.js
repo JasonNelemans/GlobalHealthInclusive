@@ -1,79 +1,26 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import styled from "styled-components"
 
 // Components
 import Layout from "../components/Layout"
 
-/* 
-Volgende stap: 
-Hoe bold duidelijker maken?
-*/
-
-export default function Home() {
-  const data = useStaticQuery(graphql`
-    query {
-      allContentfulHomepage {
-        edges {
-          node {
-            homepageBoxes {
-              slug
-              title
-              subTitle
-              content {
-                json
-              }
-              image {
-                title
-                file {
-                  url
-                }
-              }
-            }
-            bottomBanner {
-              title
-              quote
-              name
-            }
-            topBanner {
-              title
-              cover {
-                title
-                file {
-                  url
-                }
-              }
-              logo {
-                title
-                file {
-                  url
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-  console.log("data: ", data)
+export default function Home({ data }) {
   return (
     <div>
       <Layout>
-        <TopBanner>
+        <TopBanner
+          src={
+            data.allContentfulHomepage.edges[0].node.topBanner.cover.file.url
+          }
+        >
           <img
-            className="cover-banner"
-            src={
-              data.allContentfulHomepage.edges[0].node.topBanner.cover.file.url
-            }
-            alt={data.allContentfulHomepage.edges[0].node.topBanner.cover.title}
-          />
-          {/* <img
             src={
               data.allContentfulHomepage.edges[0].node.topBanner.logo.file.url
             }
             alt={data.allContentfulHomepage.edges[0].node.topBanner.logo.title}
-          /> */}
+          />
         </TopBanner>
         <BoxContainer>
           {data.allContentfulHomepage.edges[0].node.homepageBoxes.map(
@@ -84,7 +31,7 @@ export default function Home() {
                     <h2>{box.title}</h2>
                     <h3>{box.subTitle}</h3>
                     <div className="divider" />
-                    <p>{documentToReactComponents(box.content.json)}</p>
+                    {documentToReactComponents(box.content.json)}
                   </div>
                   <img
                     src={box.image.file.url}
@@ -113,7 +60,22 @@ export default function Home() {
   )
 }
 
+/*img {
+  width: 100%;
+  height: 300px;
+  background-attachment: scroll, local;
+  margin-top: 80px;
+}*/
+
 const TopBanner = styled.div`
+  margin-top: 80px;
+  height: 300px;
+  background-image: ${props => (props.src ? `url(${props.src})` : "")};
+  background-attachment: fixed;
+  background-position: 30% 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  scroll-behavior: smooth;
   display: flex;
   justify-content: center;
 `
@@ -126,15 +88,19 @@ const BoxContainer = styled.div`
 const Box = styled.div`
   display: flex;
   max-width: 940px;
-  margin: 15px auto 0px;
+  margin: 35px auto;
   background-color: #ffffff;
   justify-content: space-between;
   text-align: center;
   flex-direction: ${props => (props.uneven === 1 ? "row-reverse" : "row")};
 
+  b {
+    color: black;
+    font-weight: 800;
+  }
+
   img {
     margin: 0;
-    object-fit: contain;
   }
 
   h2 {
@@ -186,6 +152,50 @@ const BottomBanner = styled.div`
 
     p {
       color: #31419d;
+    }
+  }
+`
+export const data = graphql`
+  query {
+    allContentfulHomepage {
+      edges {
+        node {
+          homepageBoxes {
+            slug
+            title
+            subTitle
+            content {
+              json
+            }
+            image {
+              title
+              file {
+                url
+              }
+            }
+          }
+          bottomBanner {
+            title
+            quote
+            name
+          }
+          topBanner {
+            title
+            cover {
+              title
+              file {
+                url
+              }
+            }
+            logo {
+              title
+              file {
+                url
+              }
+            }
+          }
+        }
+      }
     }
   }
 `
