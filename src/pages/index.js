@@ -85,11 +85,15 @@ export default function Home() {
           })}
         </div>
         <BottomBanner>
-          <div>
-            {data.allContentfulHomepage.edges[0].node.bottomBanner.quote}
-          </div>
-          <div>
-            {data.allContentfulHomepage.edges[0].node.bottomBanner.name}
+          <div className="bb-container">
+            <div>
+              "{data.allContentfulHomepage.edges[0].node.bottomBanner.quote}"
+            </div>
+            <div>
+              <p>
+                {data.allContentfulHomepage.edges[0].node.bottomBanner.name}
+              </p>
+            </div>
           </div>
         </BottomBanner>
       </Layout>
@@ -113,4 +117,18 @@ const BottomBanner = styled.div`
   width: auto;
   background-color: #c4c4b3;
   margin-bottom: 60px;
+  padding: 100px 50px 80px 50px;
+
+  .bb-container {
+    max-width: 940px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.6em;
+    color: #fff;
+
+    p {
+      color: #31419d;
+    }
+  }
 `
