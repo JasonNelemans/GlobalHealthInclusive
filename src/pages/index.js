@@ -84,6 +84,14 @@ export default function Home() {
             )
           })}
         </div>
+        <BottomBanner>
+          <div>
+            {data.allContentfulHomepage.edges[0].node.bottomBanner.quote}
+          </div>
+          <div>
+            {data.allContentfulHomepage.edges[0].node.bottomBanner.name}
+          </div>
+        </BottomBanner>
       </Layout>
     </div>
   )
@@ -99,4 +107,10 @@ const Box = styled.div`
   margin: 15px auto;
   background-color: #ffffff;
   border: 2px solid black;
+`
+
+const BottomBanner = styled.div`
+  width: auto;
+  background-color: #c4c4b3;
+  margin-bottom: 60px;
 `
