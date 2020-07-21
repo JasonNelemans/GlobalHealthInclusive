@@ -7,13 +7,42 @@ import Layout from "../components/Layout"
 export default function Home() {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulHomepageBox(sort: { fields: createdAt, order: ASC }) {
+      allContentfulHomepage {
         edges {
           node {
-            title
-            createdAt
-            content {
-              json
+            homepageBoxes {
+              slug
+              title
+              subTitle
+              content {
+                json
+              }
+              image {
+                title
+                file {
+                  url
+                }
+              }
+            }
+            bottomBanner {
+              title
+              quote
+              name
+            }
+            topBanner {
+              title
+              cover {
+                title
+                file {
+                  url
+                }
+              }
+              logo {
+                title
+                file {
+                  url
+                }
+              }
             }
           }
         }
