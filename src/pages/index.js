@@ -1,5 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import styled from "styled-components"
 
 // Components
 import Layout from "../components/Layout"
@@ -52,10 +54,7 @@ export default function Home() {
   console.log("data: ", data)
   return (
     <div>
-      <Layout>
-        <h1>This will be the body.</h1>
-        <p>This is some text.</p>
-      </Layout>
+      <Layout></Layout>
     </div>
   )
 }
