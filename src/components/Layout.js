@@ -28,14 +28,11 @@ const GlobalStyles = createGlobalStyle`
 
   html {
     height: 100%;
+    font-family: "Raleway", open sans;
   }
 
   body {
     margin: 0;
-  }
-
-  h1, h2, h3 {
-    font-family: 'Open Sans', sans-serif;
   }
 
   p {
