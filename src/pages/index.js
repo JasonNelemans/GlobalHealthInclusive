@@ -70,6 +70,20 @@ export default function Home() {
             alt={data.allContentfulHomepage.edges[0].node.topBanner.logo.title}
           /> */}
         </TopBanner>
+        <div>
+          {data.allContentfulHomepage.edges[0].node.homepageBoxes.map(box => {
+            return (
+              <Box key={box.title}>
+                <div className="box-text">
+                  <h2>{box.title}</h2>
+                  <h3>{box.subTitle}</h3>
+                  {documentToReactComponents(box.content.json)}
+                </div>
+                <img src={box.image.file.url} alt={box.image.title} />
+              </Box>
+            )
+          })}
+        </div>
       </Layout>
     </div>
   )
@@ -78,4 +92,11 @@ export default function Home() {
 const TopBanner = styled.div`
   display: flex;
   justify-content: center;
+`
+const Box = styled.div`
+  display: flex;
+  max-width: 940px;
+  margin: 15px auto;
+  background-color: #ffffff;
+  border: 2px solid black;
 `
