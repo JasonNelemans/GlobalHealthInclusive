@@ -72,7 +72,7 @@ const TopBanner = styled.div`
   height: 300px;
   background-image: ${props => (props.src ? `url(${props.src})` : "")};
   background-attachment: fixed;
-  background-position: 30% 25%;
+  background-position: 30% 10%;
   background-repeat: no-repeat;
   background-size: cover;
   scroll-behavior: smooth;
