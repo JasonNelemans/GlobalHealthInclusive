@@ -20,6 +20,15 @@ const StyledFooter = styled.div`
   background-color: #c4c4b3;
   color: #fff;
   font-weight: 100px;
+
+  a {
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: #1cbbd3;
+  }
 `
 
 export default Footer
