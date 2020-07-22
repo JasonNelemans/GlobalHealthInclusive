@@ -2,11 +2,10 @@ import React from "react"
 import { graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import styled from "styled-components"
-import "~slick-carousel/slick/slick.css"
-import "~slick-carousel/slick/slick-theme.css"
 
 // Components
 import Layout from "../components/Layout"
+import Slider from "../components/Slider"
 
 export default function About({ data }) {
   console.log("data: ", data)
@@ -25,6 +24,7 @@ export default function About({ data }) {
             </div>
           </div>
           <div className="about-divider" />
+          <Slider />
         </div>
       </AboutContainer>
     </Layout>
