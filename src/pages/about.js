@@ -47,7 +47,7 @@ const AboutContainer = styled.div`
 
   .about-divider {
     margin: 25px auto 0;
-    border-top: 1px solid #31a069;
+    border-top: 1px solid #31419d;
     max-width: 1000px;
   }
 
