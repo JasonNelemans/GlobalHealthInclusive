@@ -2,6 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import styled from "styled-components"
+import "~slick-carousel/slick/slick.css"
+import "~slick-carousel/slick/slick-theme.css"
 
 // Components
 import Layout from "../components/Layout"
