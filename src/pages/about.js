@@ -8,7 +8,6 @@ import Layout from "../components/Layout"
 import Slider from "../components/Slider"
 
 export default function About({ data }) {
-  console.log("data: ", data)
   return (
     <Layout>
       <AboutContainer>
