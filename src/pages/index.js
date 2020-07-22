@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import styled from "styled-components"
+import nilland from "../fonts/Nilland.ttf"
 
 // Components
 import Layout from "../components/Layout"
@@ -14,13 +15,21 @@ export default function Home({ data }) {
           src={
             data.allContentfulHomepage.edges[0].node.topBanner.cover.file.url
           }
+          nilland={nilland}
         >
-          <img
-            src={
-              data.allContentfulHomepage.edges[0].node.topBanner.logo.file.url
-            }
-            alt={data.allContentfulHomepage.edges[0].node.topBanner.logo.title}
-          />
+          <div className="banner-container">
+            <img
+              src={
+                data.allContentfulHomepage.edges[0].node.topBanner.logo.file.url
+              }
+              alt={
+                data.allContentfulHomepage.edges[0].node.topBanner.logo.title
+              }
+            />
+            <h1>
+              Global <br /> Health <br /> Inclusive
+            </h1>
+          </div>
         </TopBanner>
         <BoxContainer>
           {data.allContentfulHomepage.edges[0].node.homepageBoxes.map(
@@ -78,6 +87,30 @@ const TopBanner = styled.div`
   scroll-behavior: smooth;
   display: flex;
   justify-content: center;
+  align-items: center;
+
+  @font-face {
+    font-family: 'nilland';
+    src: ${props => `url(${props.nilland})`});
+ }
+
+  .banner-container {
+    display: inherit;
+  }
+
+  img {
+    max-height: 298px;
+    margin-top: 15px;
+  }
+
+  h1 {
+    color: white;
+    font-size: 70px;
+    letter-spacing: 3px;
+    margin-left: 30px;
+    font-family: 'nilland';
+    font-weight: 200;
+  }
 `
 const BoxContainer = styled.div`
   background-color: #eeeeee;
