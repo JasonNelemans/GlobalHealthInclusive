@@ -24,7 +24,9 @@ export default function About({ data }) {
             </div>
           </div>
           <div className="about-divider" />
-          <Slider />
+          <Slider
+            testimonials={data.allContentfulAbout.edges[0].node.testimonials}
+          />
         </div>
       </AboutContainer>
     </Layout>
@@ -48,7 +50,7 @@ const AboutContainer = styled.div`
   }
 
   .about-divider {
-    margin: 25px auto 0;
+    margin: 75px auto 0;
     border-top: 1px solid #31419d;
     max-width: 1000px;
   }
