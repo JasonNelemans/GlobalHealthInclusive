@@ -14,20 +14,22 @@ const Slider = ({ testimonials }) => {
 
   return (
     <SliderContainer>
-      <img
-        src={current.image.file.url}
-        alt="portrait"
-        height="150px"
-        width="150px"
-      />
-      <p className="testi-name">
-        <strong>{current.name}</strong>
-      </p>
-      <p className="testi-creds">
-        <em>{current.credentials}</em>
-      </p>
-      <div className="testi-quote">
-        {documentToReactComponents(current.content.json)}
+      <div className="testi-container">
+        <img
+          src={current.image.file.url}
+          alt="portrait"
+          height="150px"
+          width="150px"
+        />
+        <p>
+          <strong>{current.name}</strong>
+        </p>
+        <p>
+          <em>{current.credentials}</em>
+        </p>
+        <div className="testi-quote">
+          {documentToReactComponents(current.content.json)}
+        </div>
       </div>
       <Dots active={active}>
         {Object.keys(testimonials).map(index => (
@@ -48,17 +50,15 @@ const SliderContainer = styled.div`
   align-items: center;
   margin: 40px auto;
   max-width: 1000px;
-  height: 402px;
   padding: 40px;
   border: 1px solid lightgrey;
   box-shadow: 0 0 3px #ccc;
 
-  .testi-name {
-    margin: 0;
-  }
-
-  .testi-creds {
-    margin: 0;
+  .testi-container {
+    display: inherit;
+    flex-direction: inherit;
+    align-items: inherit;
+    flex-grow: 1;
   }
 
   .testi-quote {
@@ -78,11 +78,13 @@ const SliderContainer = styled.div`
     color: #a1a5a9;
     font-family: "Roboto", open sans;
     font-size: 15px;
+    margin: 0;
   }
 `
 
 const Dots = styled.div`
   display: flex;
+  margin-top: 25px;
 
   span {
     height: 20px;
