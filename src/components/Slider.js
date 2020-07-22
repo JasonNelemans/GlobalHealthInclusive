@@ -14,16 +14,21 @@ const Slider = ({ testimonials }) => {
 
   return (
     <SliderContainer>
-      {/**Why does current.img not work? How to animate the transition of p  */}
       <img
         src={current.image.file.url}
         alt="portrait"
         height="150px"
         width="150px"
       />
-      <p>{current.name}</p>
-      <p>{current.credentials}</p>
-      {documentToReactComponents(current.content.json)}
+      <p className="testi-name">
+        <strong>{current.name}</strong>
+      </p>
+      <p className="testi-creds">
+        <em>{current.credentials}</em>
+      </p>
+      <div className="testi-quote">
+        {documentToReactComponents(current.content.json)}
+      </div>
       <Dots active={active}>
         {Object.keys(testimonials).map(index => (
           <span
@@ -43,9 +48,25 @@ const SliderContainer = styled.div`
   align-items: center;
   margin: 40px auto;
   max-width: 1000px;
+  height: 402px;
   padding: 40px;
   border: 1px solid lightgrey;
   box-shadow: 0 0 3px #ccc;
+
+  .testi-name {
+    margin: 0;
+  }
+
+  .testi-creds {
+    margin: 0;
+  }
+
+  .testi-quote {
+    margin-top: 25px;
+    p {
+      color: #66686a;
+    }
+  }
 
   img {
     object-fit: contain;
@@ -54,7 +75,7 @@ const SliderContainer = styled.div`
   p {
     text-align: center;
     margin-bottom: 20px;
-    color: #7a7979;
+    color: #a1a5a9;
     font-family: "Roboto", open sans;
     font-size: 15px;
   }
