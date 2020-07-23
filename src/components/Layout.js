@@ -1,5 +1,6 @@
 import React from "react"
 import styled, { createGlobalStyle } from "styled-components"
+import nilland from "../fonts/Nilland.ttf"
 
 // Components
 import Header from "./Header"
@@ -12,7 +13,7 @@ const Layout = props => {
         href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@300&display=swap"
         rel="stylesheet"
       ></link>
-      <GlobalStyles />
+      <GlobalStyles nilland={nilland} />
       <Wrapper>
         <Content>
           <Header />
@@ -29,6 +30,17 @@ const GlobalStyles = createGlobalStyle`
   html {
     height: 100%;
     font-family: "Raleway", open sans;
+
+    @font-face {
+      font-family: 'nilland';
+      src: ${props => `url(${props.nilland})`});
+   }
+
+   h1, h2, h3 {
+     font-family: 'nilland';
+     color: #219cbd;
+   }
+
   }
 
   body {

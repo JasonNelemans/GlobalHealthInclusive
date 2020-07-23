@@ -56,7 +56,6 @@ const AboutContainer = styled.div`
 
   h3 {
     font-size: 30px;
-    color: #31419d;
     letter-spacing: 1.5px;
   }
 

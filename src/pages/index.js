@@ -27,7 +27,7 @@ export default function Home({ data }) {
               }
             />
             <h1>
-              Global <br /> Health <br /> Inclusive
+              GLOBAL <br /> HEALTH <br /> INCLUSIVE
             </h1>
           </div>
         </TopBanner>
@@ -100,6 +100,7 @@ const TopBanner = styled.div`
 
   img {
     max-height: 298px;
+    object-fit: contain; 
     margin-top: 15px;
   }
 
@@ -107,9 +108,9 @@ const TopBanner = styled.div`
     color: white;
     font-size: 70px;
     letter-spacing: 3px;
-    margin-left: 30px;
     font-family: 'nilland';
     font-weight: 200;
+    text-align: center;
   }
 `
 const BoxContainer = styled.div`
@@ -134,16 +135,12 @@ const Box = styled.div`
 
   img {
     margin: 0;
+    object-fit: contain;
   }
 
   h2 {
     font-size: 30px;
     margin: 15px auto 0px;
-  }
-
-  h2,
-  h3 {
-    color: #31419d;
   }
 
   h3 {
