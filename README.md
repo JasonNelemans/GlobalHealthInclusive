@@ -17,7 +17,11 @@ Link to the website in development: https://stoic-kilby-8eb245.netlify.app/
 
 ## Technologies used
 
-React / Gatsby / Styled-Components
+React / Gatsby
+
+GraphQL
+
+Styled-Components
 
 Also first time working with the Contentful CMS system.
 
