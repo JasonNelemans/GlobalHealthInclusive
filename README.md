@@ -7,6 +7,7 @@ Company website in development for my client.
 • [Link to website](#Link)\
 • [Technologies used](#Technologies-used)\
 • [Goals for this project](#Goals-for-this-project)
+• [Future features](#Future-features)
 
 ## Link
 
@@ -29,3 +30,8 @@ Also first time working with the Contentful CMS system.
 
 The goal is to deliver a smooth and stylized company website, intended for widespread use.
 But also to serve as another addition to my learning curve.
+
+## Future features
+
+- Responsive web app on all screens and devices.
+- Blog dynamically updated through CMS system.
