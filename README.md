@@ -1,19 +1,19 @@
-# Global Health Inclusive
+# Global Health Inclusive 🌍
 
 Company website in development for my client.
 
 ## Table of contents
 
-• [Link to website](#Link)
-• [Technologies used](#Technologies-used)
+• [Link to website](#Link)\
+• [Technologies used](#Technologies-used)\
 • [Goals for this project](#Goals-for-this-project)
 
 ## Link
 
-Link to the (temporary) website:
+WARNING: This website is a mvp in development. Waiting for extra content to be given by client.
+Also, the website is not yet fully responsive at the time of writing. Desktop screen recommended for pleasurable viewing.
 
-WARNING: This website is a mvp in development. Responsive features not fully working.  
-Responsive features to be implemented.
+Link to the website in development: https://stoic-kilby-8eb245.netlify.app/
 
 ## Technologies used
 
