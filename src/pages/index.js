@@ -113,7 +113,7 @@ const TopBanner = styled.div`
     text-align: center;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 700px) {
     img {
       max-height: 170px;
     }
@@ -173,6 +173,18 @@ const Box = styled.div`
   .box-text {
     width: 564px;
     padding: 0 40px 10px;
+  }
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+
+    .box-text {
+      width: 440px;
+    }
+
+    img {
+      width: 100%;
+    }
   }
 `
 
