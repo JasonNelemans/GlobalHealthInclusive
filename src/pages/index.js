@@ -112,6 +112,16 @@ const TopBanner = styled.div`
     font-weight: 200;
     text-align: center;
   }
+
+  @media (max-width: 500px) {
+    img {
+      max-height: 170px;
+    }
+
+    h1 {
+      font-size: 45px;
+    }
+  }
 `
 const BoxContainer = styled.div`
   background-color: #eeeeee;
