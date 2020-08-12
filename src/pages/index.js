@@ -112,6 +112,16 @@ const TopBanner = styled.div`
     font-weight: 200;
     text-align: center;
   }
+
+  @media (max-width: 700px) {
+    img {
+      max-height: 170px;
+    }
+
+    h1 {
+      font-size: 45px;
+    }
+  }
 `
 const BoxContainer = styled.div`
   background-color: #eeeeee;
@@ -163,6 +173,19 @@ const Box = styled.div`
   .box-text {
     width: 564px;
     padding: 0 40px 10px;
+  }
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+
+    .box-text {
+      width: 440px;
+    }
+
+    img {
+      width: 100%;
+      height: 420px;
+    }
   }
 `
 
