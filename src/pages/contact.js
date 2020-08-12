@@ -51,6 +51,10 @@ const ContactContainer = styled.div`
   a {
     text-decoration: underline;
   }
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
 `
 
 export const data = graphql`
