@@ -37,7 +37,7 @@ export default function Home({ data }) {
               return (
                 <Box key={box.title} uneven={i % 2}>
                   <div className="box-text">
-                    <h2>{box.title}</h2>
+                    <h3>{box.title}</h3>
                     <h3>{box.subTitle}</h3>
                     <div className="divider" />
                     {documentToReactComponents(box.content.json)}
@@ -54,12 +54,26 @@ export default function Home({ data }) {
         </BoxContainer>
         <BottomBanner>
           <div className="bb-container">
-            <div>
-              "{data.allContentfulHomepage.edges[0].node.bottomBanner.quote}"
+            <div className="quote">
+              {documentToReactComponents(
+                data.allContentfulHomepage.edges[0].node.bottomBanner.quote.json
+              )}
             </div>
+            <img
+              src={
+                data.allContentfulHomepage.edges[0].node.bottomBanner.image.file
+                  .url
+              }
+              alt={
+                data.allContentfulHomepage.edges[0].node.bottomBanner.image.file
+                  .title
+              }
+            />
             <div>
               <p>
-                {data.allContentfulHomepage.edges[0].node.bottomBanner.name}
+                <strong>
+                  {data.allContentfulHomepage.edges[0].node.bottomBanner.name}
+                </strong>
               </p>
             </div>
           </div>
@@ -193,7 +207,7 @@ const BottomBanner = styled.div`
   width: auto;
   background-color: #c4c4b3;
   margin-bottom: 60px;
-  padding: 100px 50px 80px 50px;
+  padding: 20px;
 
   .bb-container {
     max-width: 940px;
@@ -204,7 +218,21 @@ const BottomBanner = styled.div`
     color: #fff;
 
     p {
-      color: #31419d;
+      color: #66686a;
+    }
+  }
+
+  img {
+    width: 20%;
+    height: 150px;
+    border-radius: 100%;
+  }
+
+  @media (max-width: 700px) {
+    img {
+      width: 40%;
+      height: 150px;
+      border-radius: 100%;
     }
   }
 `
@@ -216,7 +244,6 @@ export const data = graphql`
           homepageBoxes {
             slug
             title
-            subTitle
             content {
               json
             }
@@ -229,8 +256,16 @@ export const data = graphql`
           }
           bottomBanner {
             title
-            quote
+            quote {
+              json
+            }
             name
+            image {
+              title
+              file {
+                url
+              }
+            }
           }
           topBanner {
             title

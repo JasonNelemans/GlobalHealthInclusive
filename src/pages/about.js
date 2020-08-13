@@ -21,6 +21,15 @@ export default function About({ data }) {
                 data.allContentfulAbout.edges[0].node.aboutContent.content.json
               )}
             </div>
+            <img
+              src={
+                data.allContentfulAbout.edges[0].node.aboutContent.image.file
+                  .url
+              }
+              alt={
+                data.allContentfulAbout.edges[0].node.aboutContent.image.title
+              }
+            />
           </div>
           <div className="about-divider" />
           <Slider
@@ -42,10 +51,27 @@ const AboutContainer = styled.div`
   .info-container {
     display: flex;
     justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    img {
+      height: 40%;
+      width: 30%;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 700px) {
+      flex-direction: column;
+
+      img {
+        width: 50%;
+      }
+    }
   }
 
   .about-text {
-    max-width: 1000px;
+    margin: 20px 50px;
   }
 
   .about-divider {
@@ -77,6 +103,12 @@ export const data = graphql`
             title
             content {
               json
+            }
+            image {
+              title
+              file {
+                url
+              }
             }
           }
           testimonials {

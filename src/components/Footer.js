@@ -18,11 +18,11 @@ const StyledFooter = styled.div`
   padding-bottom: 30px;
   padding-top: 20px;
   background-color: #c4c4b3;
-  color: #fff;
+  color: #66686a;
   font-weight: 100px;
 
   a {
-    color: #fff;
+    color: #66686a;
     transition: color 0.3s ease;
   }
 
