@@ -28,7 +28,7 @@ export default function Contact({ data }) {
 const ContactContainer = styled.div`
   display: flex;
   margin: 65px auto;
-  line-height: 2.1em;
+  line-height: 1.2em;
   color: #7a7979;
   max-width: 1140px;
 
