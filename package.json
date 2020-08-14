@@ -19,6 +19,7 @@
     "dotenv": "^8.2.0",
     "gatsby": "^2.23.12",
     "gatsby-plugin-sharp": "^2.6.27",
+    "gatsby-remark-images-contentful": "^2.3.14",
     "gatsby-source-contentful": "^2.3.28",
     "gatsby-transformer-sharp": "^2.5.13",
     "react": "^16.12.0",
