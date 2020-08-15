@@ -188,6 +188,7 @@ const Box = styled.div`
 
   i {
     color: white;
+    visibility: hidden;
   }
 
   .box-text {
