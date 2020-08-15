@@ -6,10 +6,12 @@ import styled from "styled-components"
 // Components
 import Layout from "../components/Layout"
 import Slider from "../components/Slider"
+import Head from "../components/Head"
 
 export default function About({ data }) {
   return (
     <Layout>
+      <Head title="About" />
       <AboutContainer>
         <div className="margin-maker">
           <div className="info-container">
