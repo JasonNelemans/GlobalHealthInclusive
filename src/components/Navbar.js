@@ -58,6 +58,18 @@ const StyledNavbar = styled.nav`
   li {
     margin: 0 15px;
   }
+
+  @media (max-width: 700px) {
+    ul {
+      flex-direction: column;
+      justify-content: column;
+      margin-right: 75px;
+    }
+
+    li {
+      margin: 6px;
+    }
+  }
 `
 
 export default Navbar

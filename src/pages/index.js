@@ -196,16 +196,12 @@ const Box = styled.div`
   }
 
   .box-text {
-    width: 564px;
     padding: 0 40px 10px;
   }
 
   @media (max-width: 700px) {
     flex-direction: column;
-
-    .box-text {
-      width: 440px;
-    }
+    margin: 15px;
 
     img {
       display: none;
