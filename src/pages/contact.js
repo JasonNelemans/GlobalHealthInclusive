@@ -12,6 +12,7 @@ export default function Contact({ data }) {
     <Layout>
       <ContactContainer>
         <div className="contact-text">
+          <h3>{data.allContentfulContact.edges[0].node.content.title}</h3>
           {documentToReactComponents(
             data.allContentfulContact.edges[0].node.content.content.json
           )}
@@ -52,11 +53,20 @@ const ContactContainer = styled.div`
     text-decoration: underline;
   }
 
+  h3 {
+    font-size: 30px;
+    margin-top: 0px;
+  }
+
   @media (max-width: 700px) {
     flex-direction: column;
 
     .contact-text {
       margin: 10px;
+    }
+
+    img {
+      display: none;
     }
   }
 `
