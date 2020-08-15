@@ -8,7 +8,6 @@ import Layout from "../components/Layout"
 import Head from "../components/Head"
 
 export default function Disclaimer({ data }) {
-  console.log("data: ", data)
   return (
     <Layout>
       <Head title="Disclaimer" />

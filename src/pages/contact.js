@@ -37,6 +37,7 @@ const ContactContainer = styled.div`
 
   .contact-text {
     margin-right: 30px;
+    margin-left: 10px;
   }
 
   img {
