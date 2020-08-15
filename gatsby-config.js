@@ -6,6 +6,10 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: "Global Health Inclusive",
+    author: "Jason Nelemans",
+  },
   plugins: [
     {
       resolve: "gatsby-source-contentful",
