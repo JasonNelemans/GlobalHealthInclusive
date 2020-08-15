@@ -6,11 +6,13 @@ import nilland from "../fonts/Nilland.ttf"
 
 // Components
 import Layout from "../components/Layout"
+import Head from "../components/Head"
 
 export default function Home({ data }) {
   return (
     <div>
       <Layout>
+        <Head title="Home" />
         <TopBanner
           src={
             data.allContentfulHomepage.edges[0].node.topBanner.cover.file.url

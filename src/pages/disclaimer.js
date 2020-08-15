@@ -5,11 +5,12 @@ import styled from "styled-components"
 
 // Components
 import Layout from "../components/Layout"
+import Head from "../components/Head"
 
 export default function Disclaimer({ data }) {
-  console.log("data: ", data)
   return (
     <Layout>
+      <Head title="Disclaimer" />
       <DisclaimerContainer>
         <div className="disclaimer-text">
           {documentToReactComponents(

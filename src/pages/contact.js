@@ -5,11 +5,13 @@ import styled from "styled-components"
 
 // Components
 import Layout from "../components/Layout"
+import Head from "../components/Head"
 
 export default function Contact({ data }) {
   console.log("data: ", data)
   return (
     <Layout>
+      <Head title="Contact" />
       <ContactContainer>
         <div className="contact-text">
           <h3>{data.allContentfulContact.edges[0].node.content.title}</h3>
@@ -35,6 +37,7 @@ const ContactContainer = styled.div`
 
   .contact-text {
     margin-right: 30px;
+    margin-left: 10px;
   }
 
   img {
