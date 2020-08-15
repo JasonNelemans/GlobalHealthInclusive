@@ -68,6 +68,8 @@ export default function Home({ data }) {
                 data.allContentfulHomepage.edges[0].node.bottomBanner.image.file
                   .title
               }
+              height="150px"
+              width="20%"
             />
             <div>
               <p>
@@ -128,6 +130,8 @@ const TopBanner = styled.div`
   }
 
   @media (max-width: 700px) {
+    display: none;
+    
     img {
       max-height: 170px;
     }
@@ -147,6 +151,7 @@ const Box = styled.div`
   display: flex;
   max-width: 940px;
   margin: 35px auto;
+  padding-top: 20px;
   background-color: #ffffff;
   justify-content: space-between;
   text-align: center;
@@ -169,6 +174,7 @@ const Box = styled.div`
 
   h3 {
     margin: 10px auto 0px;
+    font-size: 25px;
   }
 
   .divider {
@@ -180,25 +186,25 @@ const Box = styled.div`
   p {
     font-size: 15px;
     text-align: left;
-    line-height: 1.5;
+    line-height: 1.3;
     color: #a1a5a9;
   }
 
+  i {
+    color: white;
+    visibility: hidden;
+  }
+
   .box-text {
-    width: 564px;
     padding: 0 40px 10px;
   }
 
   @media (max-width: 700px) {
     flex-direction: column;
-
-    .box-text {
-      width: 440px;
-    }
+    margin: 15px;
 
     img {
-      width: 100%;
-      height: 420px;
+      display: none;
     }
   }
 `
@@ -230,8 +236,8 @@ const BottomBanner = styled.div`
 
   @media (max-width: 700px) {
     img {
-      width: 40%;
-      height: 150px;
+      width: 50%;
+      height: 175px;
       border-radius: 100%;
     }
   }

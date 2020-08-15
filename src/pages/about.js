@@ -65,7 +65,7 @@ const AboutContainer = styled.div`
       flex-direction: column;
 
       img {
-        width: 50%;
+        width: 60%;
       }
     }
   }
@@ -89,8 +89,17 @@ const AboutContainer = styled.div`
     color: #a1a5a9;
   }
 
-  b {
-    color: black;
+  i {
+    color: #1cbbd3;
+    margin-left: 25px;
+  }
+
+  @media (max-width: 700px) {
+    margin: 0px;
+
+    .about-text {
+      margin: 0px;
+    }
   }
 `
 
