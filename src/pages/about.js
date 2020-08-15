@@ -90,7 +90,8 @@ const AboutContainer = styled.div`
   }
 
   b {
-    color: black;
+    color: #1cbbd3;
+    margin-left: 25px;
   }
 `
 

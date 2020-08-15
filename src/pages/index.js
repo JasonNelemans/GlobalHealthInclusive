@@ -147,6 +147,7 @@ const Box = styled.div`
   display: flex;
   max-width: 940px;
   margin: 35px auto;
+  padding-top: 15px;
   background-color: #ffffff;
   justify-content: space-between;
   text-align: center;
@@ -169,6 +170,7 @@ const Box = styled.div`
 
   h3 {
     margin: 10px auto 0px;
+    font-size: 25px;
   }
 
   .divider {
@@ -180,7 +182,7 @@ const Box = styled.div`
   p {
     font-size: 15px;
     text-align: left;
-    line-height: 1.5;
+    line-height: 1.3;
     color: #a1a5a9;
   }
 
