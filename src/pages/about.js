@@ -89,7 +89,7 @@ const AboutContainer = styled.div`
     color: #a1a5a9;
   }
 
-  b {
+  i {
     color: #1cbbd3;
     margin-left: 25px;
   }
