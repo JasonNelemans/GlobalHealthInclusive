@@ -186,6 +186,10 @@ const Box = styled.div`
     color: #a1a5a9;
   }
 
+  i {
+    color: white;
+  }
+
   .box-text {
     width: 564px;
     padding: 0 40px 10px;
