@@ -133,7 +133,7 @@ const TopBanner = styled.div`
 
   @media (max-width: 700px) {
     background-attachment: scroll;
-    
+
     img {
       max-height: 170px;
     }
@@ -231,17 +231,8 @@ const BottomBanner = styled.div`
   }
 
   img {
-    width: 20%;
-    height: 150px;
+    width: auto;
     border-radius: 100%;
-  }
-
-  @media (max-width: 700px) {
-    img {
-      width: 50%;
-      height: 175px;
-      border-radius: 100%;
-    }
   }
 `
 export const data = graphql`
