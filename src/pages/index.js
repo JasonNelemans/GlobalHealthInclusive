@@ -132,7 +132,7 @@ const TopBanner = styled.div`
   }
 
   @media (max-width: 700px) {
-    display: none;
+    background-attachment: scroll;
     
     img {
       max-height: 170px;
