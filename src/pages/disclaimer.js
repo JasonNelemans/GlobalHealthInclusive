@@ -32,6 +32,10 @@ const DisclaimerContainer = styled.div`
     background-color: white;
     max-width: 900px;
     margin: 0 auto;
+
+    @media (max-width: 900px) {
+      padding: 20px;
+    }
   }
 
   h1 {
@@ -44,6 +48,10 @@ const DisclaimerContainer = styled.div`
 
   b {
     color: black;
+  }
+
+  @media (max-width: 900px) {
+    padding: 40px;
   }
 `
 
