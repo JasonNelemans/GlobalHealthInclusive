@@ -8,7 +8,7 @@ import logo from "../images/website_logo_transparent_background.png"
 const Navbar = () => {
   return (
     <StyledNavbar>
-      <Link to="/">
+      <Link to="/home/">
         <img
           src={logo}
           alt="logo"
