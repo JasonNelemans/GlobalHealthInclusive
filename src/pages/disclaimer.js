@@ -22,7 +22,7 @@ export default function Disclaimer({ data }) {
   )
 }
 
-export const DisclaimerContainer = styled.div`
+const DisclaimerContainer = styled.div`
   background-color: #f7f7f7;
   line-height: 1.85714285714286;
   padding: 50px 50px 65px;
