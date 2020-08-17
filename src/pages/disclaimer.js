@@ -25,13 +25,17 @@ export default function Disclaimer({ data }) {
 const DisclaimerContainer = styled.div`
   background-color: #f7f7f7;
   line-height: 1.85714285714286;
-  padding: 50px;
+  padding: 50px 50px 65px;
 
   .disclaimer-text {
-    padding: 5.34em 6.67em;
+    padding: 3em 6.67em;
     background-color: white;
     max-width: 900px;
     margin: 0 auto;
+
+    @media (max-width: 900px) {
+      padding: 20px;
+    }
   }
 
   h1 {
@@ -44,6 +48,10 @@ const DisclaimerContainer = styled.div`
 
   b {
     color: black;
+  }
+
+  @media (max-width: 900px) {
+    padding: 40px;
   }
 `
 
