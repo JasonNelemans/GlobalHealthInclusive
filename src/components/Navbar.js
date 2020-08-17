@@ -19,7 +19,7 @@ const Navbar = () => {
       </Link>
       <ul>
         <li>
-          <Link to="/" activeClassName="active">
+          <Link to="/home/" activeClassName="active">
             HOME
           </Link>
         </li>
