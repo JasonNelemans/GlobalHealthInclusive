@@ -25,7 +25,7 @@ const Layout = props => {
   )
 }
 
-const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
 
   html {
     height: 100%;
