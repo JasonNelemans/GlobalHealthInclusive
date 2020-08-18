@@ -2,7 +2,6 @@ import React from "react";
 import { graphql } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import styled from "styled-components";
-import { useHistory } from "react-router-dom";
 
 import Layout from "../components/Layout";
 import Head from "../components/Head";
@@ -23,14 +22,14 @@ export const query = graphql`
 `;
 
 export default function Information(props) {
-  const history = useHistory();
-
   return (
     <Layout>
       <Head title={props.data.contentfulInformationPosts.title} />
       <InformationContainer>
         <InformationText>
-          <ReturnButton onClick={() => history.goBack()}>Return</ReturnButton>
+          <ReturnButton onClick={() => window.history.back()}>
+            Return
+          </ReturnButton>
           <div className="information-header">
             <em>
               {documentToReactComponents(
@@ -71,4 +70,5 @@ const ReturnButton = styled.div`
   display: inline-block;
   padding: 3px;
   background-color: #219cbd;
+  cursor: pointer;
 `;
