@@ -1,12 +1,12 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import styled from "styled-components"
-import nilland from "../fonts/Nilland.ttf"
+import React from "react";
+import { graphql } from "gatsby";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import styled from "styled-components";
+import nilland from "../fonts/Nilland.ttf";
 
 // Components
-import Layout from "../components/Layout"
-import Head from "../components/Head"
+import Layout from "../components/Layout";
+import Head from "../components/Head";
 
 export default function Home({ data }) {
   return (
@@ -50,7 +50,7 @@ export default function Home({ data }) {
                     width="376px"
                   />
                 </Box>
-              )
+              );
             }
           )}
         </BoxContainer>
@@ -84,7 +84,7 @@ export default function Home({ data }) {
         </BottomBanner>
       </Layout>
     </div>
-  )
+  );
 }
 
 /*img {
@@ -147,12 +147,12 @@ const TopBanner = styled.div`
       }
     }
   }
-`
+`;
 const BoxContainer = styled.div`
   background-color: #eeeeee;
   padding-top: 50px;
   padding-bottom: 100px;
-`
+`;
 
 const Box = styled.div`
   display: flex;
@@ -182,6 +182,14 @@ const Box = styled.div`
   h3 {
     margin: 10px auto 0px;
     font-size: 25px;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: #1cbbd3;
   }
 
   .divider {
@@ -214,7 +222,7 @@ const Box = styled.div`
       display: none;
     }
   }
-`
+`;
 
 const BottomBanner = styled.div`
   width: auto;
@@ -239,7 +247,7 @@ const BottomBanner = styled.div`
     width: auto;
     border-radius: 100%;
   }
-`
+`;
 export const data = graphql`
   query {
     allContentfulHomepage {
@@ -290,4 +298,4 @@ export const data = graphql`
       }
     }
   }
-`
+`;
