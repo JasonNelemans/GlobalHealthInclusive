@@ -137,14 +137,7 @@ const TopBanner = styled.div`
     background-attachment: scroll;
 
     .banner-container {
-
-      h1 {
-        font-size: 30px;
-      }
-
-      img {
-        width: 150px;
-      }
+      transform: scale(0.4);
     }
   }
 `;
