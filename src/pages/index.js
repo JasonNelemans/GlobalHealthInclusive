@@ -114,6 +114,8 @@ const TopBanner = styled.div`
 
   .banner-container {
     display: inherit;
+    width: auto;
+    
   }
 
   img {
@@ -134,12 +136,15 @@ const TopBanner = styled.div`
   @media (max-width: 700px) {
     background-attachment: scroll;
 
-    img {
-      max-height: 170px;
-    }
+    .banner-container {
 
-    h1 {
-      font-size: 45px;
+      h1 {
+        font-size: 30px;
+      }
+
+      img {
+        width: 150px;
+      }
     }
   }
 `
