@@ -18,5 +18,12 @@ export const query = graphql`
 `
 
 export default function Information(props) {
-  return <Layout>This is the information template.</Layout>
+  return (
+    <Layout>
+      <h1>{props.data.contentfulInformationPosts.title}</h1>
+      {documentToReactComponents(
+        props.data.contentfulInformationPosts.content.json
+      )}
+    </Layout>
+  )
 }
