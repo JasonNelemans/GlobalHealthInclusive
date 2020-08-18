@@ -1,10 +1,11 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import styled from "styled-components"
+import React from "react";
+import { graphql } from "gatsby";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 
-import Layout from "../components/Layout"
-import Head from "../components/Head"
+import Layout from "../components/Layout";
+import Head from "../components/Head";
 
 export const query = graphql`
   query($slug: String!) {
@@ -19,15 +20,17 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
 export default function Information(props) {
+  const history = useHistory();
+
   return (
     <Layout>
       <Head title={props.data.contentfulInformationPosts.title} />
       <InformationContainer>
         <InformationText>
-          <ReturnButton>Return</ReturnButton>
+          <ReturnButton onClick={() => history.goBack()}>Return</ReturnButton>
           <div className="information-header">
             <em>
               {documentToReactComponents(
@@ -41,7 +44,7 @@ export default function Information(props) {
         </InformationText>
       </InformationContainer>
     </Layout>
-  )
+  );
 }
 
 const InformationContainer = styled.div`
@@ -50,16 +53,16 @@ const InformationContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 50px;
-`
+`;
 const InformationText = styled.div`
   margin: 15px;
   max-width: 900px;
   line-height: 1.5;
 
   .information-header {
-    margin-bottom: 30px;
+    margin: 30px 0;
   }
-`
+`;
 
 const ReturnButton = styled.div`
   border: 2px solid #219cbd;
@@ -68,4 +71,4 @@ const ReturnButton = styled.div`
   display: inline-block;
   padding: 3px;
   background-color: #219cbd;
-`
+`;
