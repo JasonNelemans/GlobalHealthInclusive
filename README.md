@@ -11,10 +11,9 @@ Company website in development for my client.
 
 ## Link
 
-WARNING: This website is a mvp in development. Waiting for extra content to be given by client.
-Also, the website is not yet fully responsive at the time of writing. Desktop screen recommended for pleasurable viewing.
+Check out the responsive website here:
 
-Link to the website in development: https://stoic-kilby-8eb245.netlify.app/
+https://globalhealthinclusive.com
 
 ## Technologies used
 
@@ -31,7 +30,6 @@ Also first time working with the Contentful CMS system.
 The goal is to deliver a smooth and stylized company website, intended for widespread use.
 But also to serve as another addition to my learning curve.
 
-## Future features
+## (Potential) Future features
 
-- Responsive web app on all screens and devices.
 - Blog dynamically updated through CMS system.
