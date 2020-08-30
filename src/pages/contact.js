@@ -57,12 +57,16 @@ export default function Contact({ data }) {
             </a>
           </p>
           <br />
-          {documentToReactComponents(
-            data.allContentfulContact.edges[0].node.content.address.json
-          )}
+          <div className="post-address">
+            {documentToReactComponents(
+              data.allContentfulContact.edges[0].node.content.address.json
+            )}
+          </div>
           <br />
-          <p>{data.allContentfulContact.edges[0].node.content.kvk}</p>
-          <p>{data.allContentfulContact.edges[0].node.content.btw}</p>
+          <div className="kvk-btw">
+            <p>{data.allContentfulContact.edges[0].node.content.kvk}</p>
+            <p>{data.allContentfulContact.edges[0].node.content.btw}</p>
+          </div>
         </div>
 
         <img
@@ -84,6 +88,18 @@ const ContactContainer = styled.div`
   .contact-text {
     margin-right: 30px;
     margin-left: 10px;
+  }
+
+  .post-address {
+    p {
+      margin: 0;
+    }
+  }
+
+  .kvk-btw {
+    p {
+      margin: 0;
+    }
   }
 
   img {
