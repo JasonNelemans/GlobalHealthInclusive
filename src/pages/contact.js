@@ -2,6 +2,13 @@ import React from "react";
 import { graphql } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import styled from "styled-components";
+import {
+  FaLinkedin,
+  FaSkype,
+  FaMobile,
+  FaEnvelope,
+  FaGlobe,
+} from "react-icons/fa";
 
 // Components
 import Layout from "../components/Layout";
@@ -18,7 +25,46 @@ export default function Contact({ data }) {
           {documentToReactComponents(
             data.allContentfulContact.edges[0].node.content.content.json
           )}
+          <br />
+          <p>
+            <FaMobile />{" "}
+            <strong>
+              {data.allContentfulContact.edges[0].node.content.mobile}
+            </strong>
+          </p>
+          <p>
+            <FaEnvelope />{" "}
+            <a href="mailto:info@globalhealthinclusive.com ">
+              {data.allContentfulContact.edges[0].node.content.email}
+            </a>
+          </p>
+          <p>
+            <FaGlobe />{" "}
+            <a href={data.allContentfulContact.edges[0].node.content.website}>
+              {data.allContentfulContact.edges[0].node.content.website}
+            </a>
+          </p>
+          <p>
+            <FaLinkedin />{" "}
+            <a href={data.allContentfulContact.edges[0].node.content.linkedin}>
+              Christine Fenenga
+            </a>
+          </p>
+          <p>
+            <FaSkype />{" "}
+            <a href="skype:christine.fenenga2?add">
+              {data.allContentfulContact.edges[0].node.content.skype}
+            </a>
+          </p>
+          <br />
+          {documentToReactComponents(
+            data.allContentfulContact.edges[0].node.content.address.json
+          )}
+          <br />
+          <p>{data.allContentfulContact.edges[0].node.content.kvk}</p>
+          <p>{data.allContentfulContact.edges[0].node.content.btw}</p>
         </div>
+
         <img
           src={data.allContentfulContact.edges[0].node.content.image.file.url}
           alt={data.allContentfulContact.edges[0].node.content.image.file.url}
@@ -84,6 +130,16 @@ export const data = graphql`
             content {
               json
             }
+            mobile
+            email
+            website
+            linkedin
+            skype
+            address {
+              json
+            }
+            kvk
+            btw
             image {
               file {
                 url
