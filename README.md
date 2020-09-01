@@ -13,8 +13,6 @@ Company website in development for my client.
 
 Check out the responsive website here:
 
-WARNING: temporary only blanc screens by request of client.
-
 https://globalhealthinclusive.com
 
 ## Technologies used
