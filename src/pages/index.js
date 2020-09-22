@@ -133,7 +133,7 @@ const TopBanner = styled.div`
     text-align: center;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 600px) {
     background-attachment: scroll;
 
     .banner-container {
@@ -207,7 +207,7 @@ const Box = styled.div`
     padding: 0 40px 10px;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 600px) {
     flex-direction: column;
     margin: 15px;
 
