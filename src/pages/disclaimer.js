@@ -33,7 +33,7 @@ const DisclaimerContainer = styled.div`
     max-width: 900px;
     margin: 0 auto;
 
-    @media (max-width: 900px) {
+    @media (max-width: 600px) {
       padding: 20px;
     }
   }
@@ -50,7 +50,7 @@ const DisclaimerContainer = styled.div`
     color: black;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 600px) {
     padding: 40px;
   }
 `;

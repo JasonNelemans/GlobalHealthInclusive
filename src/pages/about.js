@@ -58,11 +58,17 @@ const AboutContainer = styled.div`
     margin: 0 auto;
 
     img {
-      width: 30%;
+      width: 360px;
       margin-top: 30px;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 805px) {
+      img {
+        width: 300px;
+      }
+    }
+
+    @media (max-width: 600px) {
       flex-direction: column;
 
       img {
